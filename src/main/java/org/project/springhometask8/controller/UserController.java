@@ -44,7 +44,7 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @TrackUserAction
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
         Optional<User> userOptional = Optional.ofNullable(userService.getUserById(id));
